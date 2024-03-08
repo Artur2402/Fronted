@@ -1,3 +1,80 @@
+@media screen and (max-width: 978px) {
+    .hero {
+        padding-top: 30px;
+    }
+
+    .hero__container {
+        grid-row-gap: 20px;
+    }
+
+    .hero__title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero__subtitle {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .hero__description {
+        font-size: 14px;
+    }
+
+    .hero__about {
+        text-align: center;
+    }
+
+    .hero__links {
+        justify-content: center;
+    }
+
+    .hero__box {
+        max-width: 350px;
+        justify-self: center;
+    }
+}
+
+@keyframes fillBars {
+  from {
+      width: 0;
+  }
+
+  to {
+      width: 100%;
+  }
+}
+
+
+@keyframes ava-animate {
+    0% {
+        border-radius: 27% 73% 48% 52% /
+        17% 38% 62% 83%;
+    }
+    40% {
+        border-radius: 61% 39% 69% 31% /
+        51% 59% 41% 49%;
+    }
+    60% {
+        border-radius: 40% 60% 23% 77% /
+        24% 49% 51% 76%;
+    }
+    100% {
+        border-radius: 28% 72% 56% 44% /
+        71% 26% 74% 29%;
+    }
+}
+
+@keyframes ava-bg {
+    from {
+      backdrop-filter: hue-rotate(0);
+    }
+  
+    to {
+      backdrop-filter: hue-rotate(90deg);
+    }
+  }
+
 *,
 ::before,
 ::after {
@@ -107,23 +184,150 @@ h3 {
     animation: ava-animate 5s infinite alternate;
 }
 
-@keyframes ava-animate {
-    0% {
-        border-radius: 27% 73% 48% 52% /
-        17% 38% 62% 83%;
-    }
-    40% {
-        border-radius: 61% 39% 69% 31% /
-        51% 59% 41% 49%;
-    }
-    60% {
-        border-radius: 40% 60% 23% 77% /
-        24% 49% 51% 76%;
-    }
-    100% {
-        border-radius: 28% 72% 56% 44% /
-        71% 26% 74% 29%;
-    }
+.hero__box-img {
+    animation: ava-bg 3s infinite alternate;
+}
+
+.education__timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.education__timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: rgb(7, 232, 7);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.main {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -12px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.education__left {
+  left: 0;
+}
+
+.education__right {
+  left: 50%;
+}
+
+.education__left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #FF9F55;
+}
+
+.education__right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #FF9F55 transparent transparent;
+} 
+
+.education__right::after {
+  left: -13px;
+}
+
+.education__content {
+  padding: 20px 30px;
+  background-color: rgb(181, 181, 181);
+  position: relative;
+  border-radius: 6px;
+}
+
+.education__title {
+  text-align: center;
+  padding: 30px 0px;
+}
+
+.skills {
+  padding-bottom: 30px;
+}
+
+.skills__container {
+  width: 100%;
+  padding: 0 20px;
+  max-width: 600px;
 }
 
 
+.skills__name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a1fe6;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.skills__bar {
+  height: 14px;
+  background: #202020;
+  border-radius: 3px;
+}
+
+.skills__per {
+  height: 14px;
+  background: tomato;
+  border-radius: 3px;
+  position: relative;
+  animation: fillBars 2.5s 1;
+}
+
+.skills__per::before {
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background: #f1f1f1;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.skills__per::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #f1f1f1;
+  top: -18px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 1px;
+}
